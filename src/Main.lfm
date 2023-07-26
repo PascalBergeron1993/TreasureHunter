@@ -1,0 +1,124 @@
+object MainForm: TMainForm
+  Left = 654
+  Height = 116
+  Top = 378
+  Width = 519
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Treasure Hunter'
+  ClientHeight = 96
+  ClientWidth = 519
+  Menu = MainMenu
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object SearchPath: TEdit
+    Left = 8
+    Height = 23
+    Top = 8
+    Width = 352
+    HelpType = htKeyword
+    ParentShowHint = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object SelectPath: TButton
+    Left = 368
+    Height = 25
+    Top = 7
+    Width = 144
+    Caption = 'Select search path'
+    OnClick = SelectPathClick
+    TabOrder = 1
+  end
+  object LaunchSearch: TButton
+    Left = 240
+    Height = 25
+    Top = 40
+    Width = 272
+    Caption = 'Launch search'
+    Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = LaunchSearchClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 73
+    Width = 519
+    Panels = <    
+      item
+        Text = 'Wallets found:'
+        Width = 100
+      end    
+      item
+        Width = 89
+      end    
+      item
+        Text = 'Files scanned:'
+        Width = 100
+      end    
+      item
+        Width = 130
+      end    
+      item
+        Width = 100
+      end>
+    SimplePanel = False
+  end
+  object SearchRecursively: TCheckBox
+    Left = 8
+    Height = 19
+    Top = 42
+    Width = 223
+    Caption = 'Search within all subfolders recursively'
+    Checked = True
+    State = cbChecked
+    TabOrder = 4
+  end
+  object StopSearch: TButton
+    Left = 240
+    Height = 25
+    Top = 40
+    Width = 272
+    Caption = 'Stop search'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = StopSearchClick
+    ParentFont = False
+    TabOrder = 5
+    Visible = False
+  end
+  object ProgressBar: TProgressBar
+    Left = 421
+    Height = 19
+    Top = 76
+    Width = 96
+    TabOrder = 6
+  end
+  object SelectDirectoryDialog: TSelectDirectoryDialog
+    Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing, ofForceShowHidden, ofViewDetail]
+  end
+  object StatusBarUpdater: TTimer
+    OnTimer = StatusBarUpdaterTimer
+    Left = 48
+  end
+  object MainMenu: TMainMenu
+    Left = 96
+    object OpenReportsFolder: TMenuItem
+      Caption = 'Open reports folder'
+      OnClick = OpenReportsFolderClick
+    end
+    object VisitWebsite: TMenuItem
+      Caption = 'Visit website'
+      OnClick = VisitWebsiteClick
+    end
+  end
+end
