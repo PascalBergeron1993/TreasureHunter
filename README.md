@@ -25,7 +25,7 @@ further if there is enough interest from people.
 - Blockchain.com
 - Bither
 
-## Did this software help you?
+## Has this software helped you?
 
 Consider making a donation to the following Bitcoin address: 
 bc1qu3fqvvdf0zks5lxqmpjtukg03r29jqtd2x78mx
