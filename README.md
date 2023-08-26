@@ -12,8 +12,8 @@ further if there is enough interest from people.
 
 ## Technical information
 
-- **Supported operating systems:** Windows XP to Windows 11, 64-bit only
-- **Compiled with:** Lazarus 2.2.6
+- **Supported operating systems:** Windows XP to Windows 11, 32-bit and 64-bit
+- **Compiled with:** Lazarus 2.2.6, FPC 3.2.2
 
 ## Detected wallets
 
