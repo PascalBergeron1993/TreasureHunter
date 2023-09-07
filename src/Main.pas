@@ -6,14 +6,20 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  LCLType, Menus, ExtCtrls, FileUtil, Core, LCLIntf, WalletSearcher;
+  LCLType, Menus, ExtCtrls, FileUtil, Core, LCLIntf, Buttons, WalletSearcher;
 
 type
 
   { TMainForm }
 
   TMainForm = class(TForm)
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
     ProgressBar: TProgressBar;
+    WalletsFoundLabel: TLabel;
+    FilesScannedLabel: TLabel;
+    ActionsPanel: TPanel;
+    Panel1: TPanel;
     StopSearch: TButton;
     MainMenu: TMainMenu;
     OpenReportsFolder: TMenuItem;
@@ -24,7 +30,6 @@ type
     LaunchSearch: TButton;
     SearchPath: TEdit;
     SelectDirectoryDialog: TSelectDirectoryDialog;
-    StatusBar: TStatusBar;
     StatusBarUpdater: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure StatusBarUpdaterTimer(Sender: TObject);
@@ -56,12 +61,12 @@ procedure TMainForm.StatusBarUpdaterTimer(Sender: TObject);
 begin
   if (WalletSearcher <> nil) and (not(WalletSearcher.Finished)) then
   begin
-    FoundWallets := Length(WalletSearcher.FoundWallets);
     FilesScanned := WalletSearcher.FilesScanned;
+    FoundWallets := Length(WalletSearcher.FoundWallets);
   end;
 
-  StatusBar.Panels[1].Text := FormatFloat('#,##0', FoundWallets, FormatSettings);
-  StatusBar.Panels[3].Text := FormatFloat('#,##0', FilesScanned, FormatSettings);
+  FilesScannedLabel.Caption := 'Files scanned: ' + FormatFloat('#,##0', FilesScanned, FormatSettings);
+  WalletsFoundLabel.Caption := 'Wallets found: ' + FormatFloat('#,##0', FoundWallets, FormatSettings);
 end;
 
 procedure TMainForm.SelectPathClick(Sender: TObject);
@@ -82,7 +87,7 @@ end;
 
 procedure TMainForm.VisitWebsiteClick(Sender: TObject);
 begin
-  OpenDocument(WebsiteURL);
+  OpenURL(WebsiteURL);
 end;
 
 procedure TMainForm.LaunchSearchClick(Sender: TObject);
@@ -97,8 +102,8 @@ begin
   if (not(DirectoryExists(ReportsPath))) then
     CreateDir(ReportsPath);
 
-  LaunchSearch.Visible := false;
-  StopSearch.Visible := true;
+  LaunchSearch.Enabled := false;
+  StopSearch.Enabled := true;
   SearchRecursively.Enabled := false;
   SelectPath.Enabled := false;
   SearchPath.Enabled := false;

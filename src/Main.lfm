@@ -1,13 +1,15 @@
 object MainForm: TMainForm
-  Left = 654
-  Height = 116
-  Top = 378
-  Width = 519
+  Left = 464
+  Height = 235
+  Top = 189
+  Width = 539
+  Anchors = [akLeft]
+  AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Treasure Hunter'
-  ClientHeight = 96
-  ClientWidth = 519
+  ClientHeight = 215
+  ClientWidth = 539
   Menu = MainMenu
   OnCreate = FormCreate
   Position = poScreenCenter
@@ -16,92 +18,167 @@ object MainForm: TMainForm
     Left = 8
     Height = 23
     Top = 8
-    Width = 352
+    Width = 523
     HelpType = htKeyword
+    Align = alTop
+    Anchors = []
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 8
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 8
+    Constraints.MinWidth = 500
     ParentShowHint = False
     ReadOnly = True
     TabOrder = 0
   end
   object SelectPath: TButton
-    Left = 368
+    Left = 8
     Height = 25
-    Top = 7
-    Width = 144
+    Top = 39
+    Width = 523
+    Align = alTop
+    Anchors = []
+    BorderSpacing.Left = 8
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 8
     Caption = 'Select search path'
     OnClick = SelectPathClick
     TabOrder = 1
   end
-  object LaunchSearch: TButton
-    Left = 240
-    Height = 25
-    Top = 40
-    Width = 272
-    Caption = 'Launch search'
-    Enabled = False
-    Font.CharSet = ANSI_CHARSET
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    OnClick = LaunchSearchClick
-    ParentFont = False
-    TabOrder = 2
-  end
-  object StatusBar: TStatusBar
-    Left = 0
-    Height = 23
-    Top = 73
-    Width = 519
-    Panels = <    
-      item
-        Text = 'Wallets found:'
-        Width = 100
-      end    
-      item
-        Width = 89
-      end    
-      item
-        Text = 'Files scanned:'
-        Width = 100
-      end    
-      item
-        Width = 130
-      end    
-      item
-        Width = 100
-      end>
-    SimplePanel = False
-  end
-  object SearchRecursively: TCheckBox
+  object ActionsPanel: TPanel
     Left = 8
-    Height = 19
-    Top = 42
-    Width = 223
-    Caption = 'Search within all subfolders recursively'
-    Checked = True
-    State = cbChecked
-    TabOrder = 4
+    Height = 35
+    Top = 72
+    Width = 523
+    Align = alTop
+    BorderSpacing.Left = 8
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 6
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 523
+    TabOrder = 2
+    object LaunchSearch: TButton
+      Left = 0
+      Height = 35
+      Top = 0
+      Width = 365
+      Align = alClient
+      Anchors = []
+      BorderSpacing.Right = 8
+      Caption = 'Launch search'
+      Constraints.MinWidth = 300
+      Enabled = False
+      Font.Style = [fsBold]
+      OnClick = LaunchSearchClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object StopSearch: TButton
+      Left = 373
+      Height = 35
+      Top = 0
+      Width = 150
+      Align = alRight
+      Anchors = []
+      Caption = 'Stop search'
+      Constraints.MaxWidth = 150
+      Constraints.MinWidth = 150
+      Enabled = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = StopSearchClick
+      ParentFont = False
+      TabOrder = 1
+    end
   end
-  object StopSearch: TButton
-    Left = 240
-    Height = 25
-    Top = 40
-    Width = 272
-    Caption = 'Stop search'
-    Font.CharSet = ANSI_CHARSET
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    Font.Style = [fsBold]
-    OnClick = StopSearchClick
-    ParentFont = False
-    TabOrder = 5
-    Visible = False
-  end
-  object ProgressBar: TProgressBar
-    Left = 421
-    Height = 19
-    Top = 76
-    Width = 96
-    TabOrder = 6
+  object Panel1: TPanel
+    Left = 0
+    Height = 102
+    Top = 113
+    Width = 539
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 102
+    ClientWidth = 539
+    TabOrder = 3
+    object GroupBox2: TGroupBox
+      Left = 8
+      Height = 74
+      Top = 0
+      Width = 235
+      Align = alLeft
+      BorderSpacing.Left = 8
+      BorderSpacing.Bottom = 8
+      Caption = ' Settings '
+      ClientHeight = 54
+      ClientWidth = 231
+      Constraints.MaxWidth = 256
+      TabOrder = 0
+      object SearchRecursively: TCheckBox
+        AnchorSideTop.Control = GroupBox2
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 19
+        Top = 18
+        Width = 216
+        Align = alCustom
+        AutoSize = False
+        Caption = 'Search files recursively'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 251
+      Height = 74
+      Top = 0
+      Width = 280
+      Align = alClient
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 8
+      Caption = ' Statistics '
+      ClientHeight = 54
+      ClientWidth = 276
+      TabOrder = 1
+      object WalletsFoundLabel: TLabel
+        Left = 8
+        Height = 15
+        Top = 31
+        Width = 268
+        Align = alTop
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 8
+        BorderSpacing.Bottom = 8
+        Caption = 'Wallets found: ?'
+        ParentColor = False
+      end
+      object FilesScannedLabel: TLabel
+        Left = 8
+        Height = 15
+        Top = 8
+        Width = 268
+        Align = alTop
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 8
+        BorderSpacing.Bottom = 8
+        Caption = 'Files scanned: ?'
+        ParentColor = False
+      end
+    end
+    object ProgressBar: TProgressBar
+      Left = 0
+      Height = 20
+      Top = 82
+      Width = 539
+      Align = alBottom
+      TabOrder = 2
+    end
   end
   object SelectDirectoryDialog: TSelectDirectoryDialog
     Options = [ofPathMustExist, ofFileMustExist, ofEnableSizing, ofForceShowHidden, ofViewDetail]

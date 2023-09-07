@@ -50,7 +50,7 @@ begin
 
   FWalletIdentifier := TWalletIdentifier.Create;
 
-  FCurrentReport := ReportsPath + FormatDateTime('yyyy-mm-dd hh-nn-ss.zzz', Now) + '\';
+  FCurrentReport := IncludeTrailingPathDelimiter(ReportsPath + FormatDateTime('yyyy-mm-dd hh-nn-ss.zzz', Now));
   CreateDir(FCurrentReport);
 
   AssignFile(FDebugLog, FCurrentReport + 'debug.txt');
@@ -67,9 +67,8 @@ procedure TWalletSearcher.FinalizeSearch;
 begin
   MainForm.StatusBarUpdaterTimer(nil);
 
-  MainForm.LaunchSearch.Visible := true;
-  MainForm.StopSearch.Visible := false;
-  MainForm.StopSearch.Enabled := true;
+  MainForm.LaunchSearch.Enabled := true;
+  MainForm.StopSearch.Enabled := false;
   MainForm.SearchRecursively.Enabled := true;
   MainForm.SelectPath.Enabled := true;
   MainForm.SearchPath.Enabled := true;
