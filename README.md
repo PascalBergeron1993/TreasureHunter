@@ -10,11 +10,6 @@ in an attempt to hide them. You can find more information at https://pascal-berg
 This software is currently at the stage of proof-of-concept. It will be improved
 further if there is enough interest from people.
 
-## Technical information
-
-- **Supported operating systems:** Windows XP to Windows 11, 32-bit and 64-bit
-- **Compiled with:** Lazarus 2.2.6, FPC 3.2.2
-
 ## Detected wallets
 
 - BitcoinJ
@@ -24,6 +19,17 @@ further if there is enough interest from people.
 - Electrum
 - Blockchain.com
 - Bither
+
+## Supported operating systems
+
+- **Windows XP to Windows 11:** 32-bit (i386) and 64-bit (x86-64)
+- **Linux:** 32-bit (i386) and 64-bit (x86-64), GTK 2 is required
+
+## Technical information
+
+- **Lazarus version**: 2.2.6, 64-bit (x86-64)
+- **Free Pascal Compiler version**: 3.2.2
+- **Compiled under:** Windows 10, 64-bit (x86-64)
 
 ## Has this software helped you?
 
