@@ -16,7 +16,7 @@ implementation
 initialization
   AppPath := ExtractFilePath(ParamStr(0));
   ReportsPath := IncludeTrailingPathDelimiter(AppPath + 'reports');
-  AppVersion := '0.0.3';
+  AppVersion := '0.0.4';
   WebsiteURL := 'https://pascal-bergeron.com/en/posts/treasure-hunter/';
   ContactEmail := 'contact@pascal-bergeron.com';
   BTCDonationAddress := 'bc1qu3fqvvdf0zks5lxqmpjtukg03r29jqtd2x78mx';
