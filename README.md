@@ -23,13 +23,19 @@ further if there is enough interest from people.
 ## Supported operating systems
 
 - **Windows XP to Windows 11:** 32-bit (i386) and 64-bit (x86-64)
+- **Mac OS:** 64-bit (x86-64), but the application is not signed
 - **Linux:** 32-bit (i386) and 64-bit (x86-64), GTK 2 is required
 
 ## Technical information
 
-- **Lazarus version**: 2.2.6, 64-bit (x86-64)
-- **Free Pascal Compiler version**: 3.2.2
-- **Compiled under:** Windows 10, 64-bit (x86-64)
+The software is compiled with **Free Pascal Compiler 3.2.2** and **Lazarus 2.2.6, 64-bit (x86-64)**.
+
+The **Windows binaries** are compiled on **Windows 10, 64-bit (x86-64)**.
+
+The **Mac OS binaries** are compiled through a **Hackintosh running Monterey 12.0.1 (x86-64)**. **VirtualBox 7.0.10** is used
+to run the virtual machine; the host operating system is **Windows 10, 64-bit (x86-64)**.
+
+The **Linux binaries** are cross-compiled on **Windows 10, 64-bit (x86-64)**.
 
 ## Has this software helped you?
 
