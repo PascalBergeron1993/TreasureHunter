@@ -32,8 +32,7 @@ The software is compiled with **Free Pascal Compiler 3.2.2** and **Lazarus 2.2.6
 
 The **Windows binaries** are compiled on **Windows 10, 64-bit (x86-64)**.
 
-The **Mac OS binaries** are compiled on a **Hackintosh running Monterey 12.0.1 (x86-64)**. It is virtualized
-through **VirtualBox 7.0.10** and the host operating system is **Windows 10, 64-bit (x86-64)**.
+The **Mac OS binaries** are cross-compiled on **Sonoma 14.3 (ARM64)**.
 
 The **Linux binaries** are cross-compiled on **Windows 10, 64-bit (x86-64)**.
 
