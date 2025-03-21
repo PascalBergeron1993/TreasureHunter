@@ -193,8 +193,12 @@ object MainForm: TMainForm
       Caption = 'Open reports folder'
       OnClick = OpenReportsFolderClick
     end
+    object SellBitcoins: TMenuItem
+      Caption = 'Sell your Bitcoins'
+      OnClick = SellBitcoinsClick
+    end
     object VisitWebsite: TMenuItem
-      Caption = 'Visit website'
+      Caption = 'Visit my website'
       OnClick = VisitWebsiteClick
     end
   end

@@ -15,6 +15,7 @@ type
   TMainForm = class(TForm)
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
+    SellBitcoins: TMenuItem;
     ProgressBar: TProgressBar;
     WalletsFoundLabel: TLabel;
     FilesScannedLabel: TLabel;
@@ -32,6 +33,7 @@ type
     SelectDirectoryDialog: TSelectDirectoryDialog;
     StatusBarUpdater: TTimer;
     procedure FormCreate(Sender: TObject);
+    procedure SellBitcoinsClick(Sender: TObject);
     procedure StatusBarUpdaterTimer(Sender: TObject);
     procedure SelectPathClick(Sender: TObject);
     procedure OpenReportsFolderClick(Sender: TObject);
@@ -55,6 +57,11 @@ implementation
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   StatusBarUpdaterTimer(nil);
+end;
+
+procedure TMainForm.SellBitcoinsClick(Sender: TObject);
+begin
+  OpenURL(ExchangesURL);
 end;
 
 procedure TMainForm.StatusBarUpdaterTimer(Sender: TObject);
