@@ -16,7 +16,7 @@ implementation
 initialization
   AppPath := ExtractFilePath(ParamStr(0));
   ReportsPath := IncludeTrailingPathDelimiter(AppPath + 'reports');
-  AppVersion := '0.0.5';
+  AppVersion := '0.0.6';
   WebsiteURL := 'https://pascal-bergeron.com/en/posts/treasure-hunter/';
   ExchangesURL := 'https://pascal-bergeron.com/en/posts/exchanges-cryptocurencies/';
   ContactEmail := 'contact@pascal-bergeron.com';

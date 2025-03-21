@@ -146,6 +146,11 @@ begin
   WriteLn(ReportFile, 'been lost. If you are interested, send an email to ' + ContactEmail);
   WriteLn(ReportFile, '');
 
+  WriteLn(ReportFile, 'DO YOU NEED TO SELL YOUR BITCOINS?');
+  WriteLn(ReportFile, '-----------------------------------');
+  WriteLn(ReportFile, 'To sell your Bitcoins, visit the following URL: ' + ExchangesURL);
+  WriteLn(ReportFile, '');
+
   WriteLn(ReportFile, 'WAS MY SOFTWARE USEFUL?');
   WriteLn(ReportFile, '-----------------------------------');
   WriteLn(ReportFile, 'If you don''t need my professional help, consider making a donation to');
